@@ -50,10 +50,10 @@ const CursorFollower = () => {
   
   const variants = {
     default: "h-24 w-24 rounded-full border-2 border-white backdrop-blur-sm",
-      developerImage: "h-32 w-32 rounded-lg border-2 border-neutral-500 overflow-hidden shadow-lg",
-      sisusImage: "h-32 w-32 rounded-lg border-2 border-neutral-500 overflow-hidden shadow-lg",
-      sanadImage: "h-32 w-32 rounded-lg border-2 border-neutral-500 overflow-hidden shadow-lg",
-      arqImage: "h-32 w-32 rounded-lg border-2 border-neutral-500 overflow-hidden shadow-lg",
+      developerImage: "h-64 w-82 rounded-lg border-2 border-neutral-500 overflow-hidden shadow-lg",
+      sisusImage: "h-64 w-82 rounded-lg border-2 border-neutral-500 overflow-hidden shadow-lg",
+      sanadImage: "h-64 w-82 rounded-lg border-2 border-neutral-500 overflow-hidden shadow-lg",
+      arqImage: "h-64 w-82 rounded-lg border-2 border-neutral-500 overflow-hidden shadow-lg",
       
     
     // Anda bisa tambahkan varian lain di sini, misal: 'link', 'text', 'imageHover'

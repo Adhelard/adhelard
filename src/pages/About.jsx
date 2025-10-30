@@ -43,7 +43,7 @@ const achievements = [
     icon: <GraduationCap />,
     title: '30 Juz Quran Memorization',
     desc: 'Completed the Ziyadah (Memorization) of 30 Juz of the Holy Qur\'an.', //
-    variant: 'sisuImage',
+    variant: 'sisusImage',
   },
   {
     icon: <GraduationCap />,
@@ -61,7 +61,7 @@ const achievements = [
     icon: <Star />,
     title: '"Zero to Hero" Award',
     desc: 'Awarded for achievement in Arabic Language at the Language Fest 2024, Sekolah Impian.', //
-    variant: 'developerImage',
+    variant: 'default',
   },
 ];
 
@@ -124,7 +124,7 @@ const About = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
-            <h2 className="mb-16 text-center text-4xl font-bold">Experience</h2>
+            <h2 className="mb-16  text-4xl font-bold">Experience</h2>
             <div className="relative border-l-2 border-neutral-700 pl-10">
               
               {/* 3. Modifikasi loop 'experiences' */}

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ContactForm from '../components/ContactForm'; 
-import { Mail, Phone, MapPin } from 'lucide-react'; 
+import { Mail, Phone, MapPin, Github, Linkedin, Instagram } from 'lucide-react'; 
 import MagneticButton from '../components/MagneticButton'; // Impor MagneticButton
 
 // Varian animasi sederhana
@@ -82,16 +82,28 @@ const Contact = () => {
             className="flex flex-col gap-4 text-lg"
           >
             <a href="mailto:Blackarifin15@gmail.com" className="flex items-center gap-4 group w-fit">
-              <Mail className="h-6 w-6 text-blue-500" />
+              <Mail className="h-6 w-6 text-black" />
               <span className="text-neutral-200 group-hover:text-white transition-colors">Blackarifin15@gmail.com</span>
             </a>
             <div className="flex items-center gap-4">
-              <Phone className="h-6 w-6 text-blue-500" />
+              <Phone className="h-6 w-6 text-black" />
               <span className="text-neutral-200">0895 3830 51277</span>
             </div>
             <div className="flex items-center gap-4">
-              <MapPin className="h-6 w-6 text-blue-500" />
+              <MapPin className="h-6 w-6 text-black" />
               <span className="text-neutral-200">Cakung, East Jakarta</span>
+            </div>
+            <div className="flex gap-5">
+
+            <a href="https://github.com/Adhelard" className="text-neutral-400 transition-colors hover:text-white">
+            <Github className="h-8 w-8" />
+            </a>
+            <a href="https://www.linkedin.com/in/muhammad-arifin-740588386/" className="text-neutral-400 transition-colors hover:text-white">
+              <Linkedin className="h-8 w-8" />
+            </a>
+            <a href="https://www.instagram.com/alefinn_?igsh=Zm81Z2luOWx4bno0" className="text-neutral-400 transition-colors hover:text-white">
+              <Instagram className="h-8 w-8" />
+            </a>
             </div>
           </motion.div>
         </section>
