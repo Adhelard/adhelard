@@ -9,7 +9,7 @@ const CTA = () => (
     {/* Efek latar belakang */}
     <div className="absolute inset-0 z-0 bg-gradient from-neutral-700/20 via-neutral-900/0 to-neutral-900"></div>
 
-    <div className="z-10 flex felx-col sm:flex-row bg-neutral-600 w-auto border justify-evenly rounded-4xl p-12 items-center">
+    <div className="z-10 flex felx-col md:flex-row bg-neutral-600 w-auto border justify-evenly rounded-4xl p-12 items-center">
       
 
       {/* Ikon Sosial Media */}
