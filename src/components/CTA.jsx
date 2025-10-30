@@ -9,7 +9,7 @@ const CTA = () => (
     {/* Efek latar belakang */}
     <div className="absolute inset-0 z-0 bg-gradient from-neutral-700/20 via-neutral-900/0 to-neutral-900"></div>
 
-    <div className="z-10 flex bg-neutral-600 w-auto border justify-evenly rounded-4xl p-12 items-center">
+    <div className="z-10 flex felx-col sm:flex-row bg-neutral-600 w-auto border justify-evenly rounded-4xl p-12 items-center">
       
 
       {/* Ikon Sosial Media */}
@@ -20,7 +20,7 @@ const CTA = () => (
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <h2 class="mb-8 text-center text-5xl font-bold md:text-7xl">
+        <h2 class="mb-8 text-center text-4xl font-bold md:text-7xl">
           Let's work together
         </h2>
         <div className="flex space-x-5 justify-start">
