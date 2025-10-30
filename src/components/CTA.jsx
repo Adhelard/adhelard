@@ -23,7 +23,7 @@ const CTA = () => (
         <h2 class="mb-8 text-center text-4xl font-bold md:text-7xl">
           Let's work together
         </h2>
-        <div className="flex flex-col md:flex-row space-x-5 justify-start">
+        <div className="flex flex-col md:flex-row space-x-5 justify-center md:justify-start">
           <motion.img
             src="ex.jpg" // Ganti dengan fotomu
             alt="About Illustration"
@@ -34,7 +34,7 @@ const CTA = () => (
             <h2 class="mb-8 text-center text-lg font-medium md:text-2xl">
             Alee is available for any job!
            </h2>
-            <div className="flex gap-5">
+            <div className="flex gap-5 items-center md:items-start">
 
             <a href="https://github.com/Adhelard" className="text-neutral-400 transition-colors hover:text-white">
             <Github className="h-8 w-8" />

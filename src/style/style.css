@@ -1188,6 +1188,16 @@
       flex-direction: row;
     }
   }
+  .md\:items-start {
+    @media (width >= 48rem) {
+      align-items: flex-start;
+    }
+  }
+  .md\:justify-start {
+    @media (width >= 48rem) {
+      justify-content: flex-start;
+    }
+  }
   .md\:p-24 {
     @media (width >= 48rem) {
       padding: calc(var(--spacing) * 24);
