@@ -72,7 +72,7 @@ const Skills = () => {
     <section className="overflow-hidden bg-black py-24 sm:py-48">
       <div className="mx-auto w-full ">
         <h2 className="mb-16 text-center text-4xl font-bold tracking-tight text-white sm:text-5xl">
-          Skills You maybe need from me!
+          How can i help you?
         </h2>
         
         {/* Wrapper untuk Marquee */}
