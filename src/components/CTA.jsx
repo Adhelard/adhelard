@@ -30,7 +30,7 @@ const CTA = () => (
             className="w-[200px] h-[200px] object-cover rounded-2xl filter grayscale hover:grayscale-0 transition-all duration-700 ease-in-out hover:scale-105 shadow-xl"
             whileHover={{ scale: 1.05 }}
           />
-          <div className="p-2">
+          <div className="p-2 flex sm:flex-col">
             <h2 class="mb-8 text-center text-lg font-medium md:text-2xl">
             Alee is available for any job!
            </h2>

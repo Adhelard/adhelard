@@ -1,61 +1,64 @@
+// fileName: ContactForm.jsx (REVISI)
+
 import { useState } from 'react';
 
-const ContactForm = () => {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
-  const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
+const ContactForm = ({ onSubmit, loading, success, form, setForm }) => {
+ // Fungsi onChange yang disederhanakan
+ const handleChange = (e) => {
+  const { name, value } = e.target;
+  setForm({ ...form, [name]: value });
+ };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setSuccess(false);
-
-    // Simulate a delay for "sending" (dummy behavior)
-    setTimeout(() => {
-      setLoading(false);
-      setSuccess(true);
-      alert('Message sent successfully! (This is a dummy form - no real email was sent.)');
-      setForm({ name: '', email: '', message: '' }); // Reset form
-    }, 2000); // 2-second delay
-  };
+ const inputStyle = `
+        w-full 
+        p-4 
+        text-xl 
+        text-white 
+        bg-transparent 
+        border-b 
+        border-neutral-700 
+        focus:border-blue-500 
+        focus:outline-none 
+        placeholder-neutral-500 
+        transition-colors 
+        duration-300
+    `;
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <input
-          type="text"
-          placeholder="Name"
-          value={form.name}
-          onChange={(e) => setForm({ ...form, name: e.target.value })}
-          required
-          className="w-full p-2 border rounded"
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          value={form.email}
-          onChange={(e) => setForm({ ...form, email: e.target.value })}
-          required
-          className="w-full p-2 border rounded"
-        />
-        <textarea
-          placeholder="Message"
-          value={form.message}
-          onChange={(e) => setForm({ ...form, message: e.target.value })}
-          required
-          className="w-full p-2 border rounded h-24"
-        />
-        <button
-          type="submit"
-          disabled={loading}
-          className="px-4 py-2 bg-blue-500 text-white rounded disabled:opacity-50"
-        >
-          {loading ? 'Sending...' : 'Send'}
-        </button>
-      </form>
-      {success && <p className="mt-4 text-green-500">Thank you! Your message has been "sent" (dummy mode).</p>}
-    </div>
-  );
+   <div className="">
+  
+  <form className="space-y-12" onSubmit={onSubmit}>
+    <input
+     type="text"
+     placeholder="Your Name"
+     name="name"
+     value={form.name}
+     onChange={handleChange}
+     required
+     className={inputStyle}
+    />
+    <input
+     type="email"
+     placeholder="Your Email"
+     name="email"
+     value={form.email}
+     onChange={handleChange}
+     required
+     className={inputStyle}
+    />
+    <textarea
+     placeholder="Your Message"
+     name="message"
+     value={form.message}
+     onChange={handleChange}
+     required
+     className={`${inputStyle} h-32 resize-none`}
+    />
+    {/* Tombol Submit dihapus dari sini */}
+  </form>
+  {success && <p className="mt-6 text-green-400">Thank you! Your message has been "sent" (dummy mode).</p>}
+ </div>
+ );
 };
 
 export default ContactForm;

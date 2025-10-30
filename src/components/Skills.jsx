@@ -53,7 +53,7 @@ const Marquee = ({ children, direction = 'left' }) => {
       { x: startPos },
       {
         x: distance,
-        duration: 30, // Durasi lebih lama agar lambat
+        duration: 20, // Durasi lebih lama agar lambat
         repeat: -1,
         ease: 'none',
       }
