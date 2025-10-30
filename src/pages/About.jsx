@@ -176,7 +176,7 @@ const About = () => {
                   viewport={{ once: true, amount: 0.5 }}
                   className="flex items-start gap-5 rounded-lg bg-neutral-800 p-6"
                   // Contoh:
-                  onMouseEnter={() => setCursorVariant(exp.variant || 'default')}
+                  onMouseEnter={() => setCursorVariant(ach.variant || 'default')}
                   onMouseLeave={() => setCursorVariant('default')}
                 >
                   <div className="flex shrink-0 rounded-full bg-neutral-700 p-3 text-neutral-300">
