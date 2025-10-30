@@ -37,7 +37,7 @@ const CursorFollower = () => {
             });
 
             // Pastikan kursor terlihat setelah mouse bergerak
-            gsap.to(cursor, { opacity: 1, duration: 0.3 });
+            gsap.to(cursor, { opacity: 1, duration: 0.2 });
             
             requestAnimationFrame(animate);
         };
@@ -56,7 +56,7 @@ const CursorFollower = () => {
     return (
         <div 
             ref={cursorRef} 
-            className="fixed pointer-events-none z-50 h-8 w-8 rounded-full border-2 border-white backdrop-blur-sm transform -translate-x-1/2 -translate-y-1/2" 
+            className="fixed pointer-events-none z-50 h-24 w-24 rounded-full border-2 border-white backdrop-blur-sm transform -translate-x-1/2 -translate-y-1/2" 
         />
     );
 };
