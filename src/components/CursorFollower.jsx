@@ -1,64 +1,108 @@
+// src/components/CursorFollower.jsx
+
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+// 1. Impor hook 'useCursor'
+import { useCursor } from '../context/CursorContext';
 
-// Komponen kursor kustom yang mengikuti mouse dengan animasi GSAP
 const CursorFollower = () => {
-    // Referensi untuk elemen kursor (lingkaran)
-    const cursorRef = useRef(null);
+  const cursorRef = useRef(null);
+  // 2. Dapatkan state kursor saat ini dari konteks
+  const { cursorVariant } = useCursor();
 
-    useEffect(() => {
-        const cursor = cursorRef.current;
-        if (!cursor) return;
+  useEffect(() => {
+    const cursor = cursorRef.current;
+    if (!cursor) return;
 
-        // Atur posisi awal kursor ke luar layar
-        gsap.set(cursor, { xPercent: -50, yPercent: -50, opacity: 0 });
+    gsap.set(cursor, { xPercent: -50, yPercent: -50, opacity: 0 });
 
-        // Objek untuk menyimpan posisi mouse saat ini
-        const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-        const mouse = { x: pos.x, y: pos.y };
+    const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+    const mouse = { x: pos.x, y: pos.y };
 
-        // Listener untuk melacak pergerakan mouse
-        const handleMouseMove = (e) => {
-            mouse.x = e.clientX;
-            mouse.y = e.clientY;
-        };
+    const handleMouseMove = (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    };
 
-        window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove);
 
-        // Fungsi animasi menggunakan requestAnimationFrame
-        const animate = () => {
-            // GSAP.to() akan memindahkan kursor ke posisi mouse (mouse.x, mouse.y)
-            // Menggunakan durasi dan ease menciptakan efek "ketinggalan" (lagging)
-            gsap.to(cursor, {
-                duration: 0.6, // Kecepatan kursor mengikuti
-                x: mouse.x,
-                y: mouse.y,
-                ease: "power2.out", // Kurva easing yang bagus
-            });
+    const animate = () => {
+      gsap.to(cursor, {
+        duration: 0.6,
+        x: mouse.x,
+        y: mouse.y,
+        ease: "power2.out",
+      });
+      gsap.to(cursor, { opacity: 1, duration: 0.2 });
+      requestAnimationFrame(animate);
+    };
 
-            // Pastikan kursor terlihat setelah mouse bergerak
-            gsap.to(cursor, { opacity: 1, duration: 0.2 });
-            
-            requestAnimationFrame(animate);
-        };
+    const animationFrameId = requestAnimationFrame(animate);
 
-        // Mulai loop animasi
-        const animationFrameId = requestAnimationFrame(animate);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
 
-        // Cleanup: Hapus event listener saat komponen di-unmount
-        return () => {
-            window.removeEventListener('mousemove', handleMouseMove);
-            cancelAnimationFrame(animationFrameId);
-        };
-    }, []);
+  // 3. Definisikan varian style
+  const baseStyle = "fixed pointer-events-none z-50 transition-all duration-300 ease-out";
+  
+  const variants = {
+    default: "h-24 w-24 rounded-full border-2 border-white backdrop-blur-sm",
+      developerImage: "h-32 w-32 rounded-lg border-2 border-neutral-500 overflow-hidden shadow-lg",
+      sisusImage: "h-32 w-32 rounded-lg border-2 border-neutral-500 overflow-hidden shadow-lg",
+      sanadImage: "h-32 w-32 rounded-lg border-2 border-neutral-500 overflow-hidden shadow-lg",
+      arqImage: "h-32 w-32 rounded-lg border-2 border-neutral-500 overflow-hidden shadow-lg",
+      
+    
+    // Anda bisa tambahkan varian lain di sini, misal: 'link', 'text', 'imageHover'
+  };
 
-    // Catatan: Kursor bawaan browser disembunyikan di CSS global (di App.jsx)
-    return (
-        <div 
-            ref={cursorRef} 
-            className="fixed pointer-events-none z-50 h-24 w-24 rounded-full border-2 border-white backdrop-blur-sm transform -translate-x-1/2 -translate-y-1/2" 
+  const currentStyle = variants[cursorVariant] || variants.default;
+
+  return (
+    <div
+      ref={cursorRef}
+      // 4. Terapkan style dinamis berdasarkan state
+      className={`${baseStyle} ${currentStyle}`}
+    >
+      {/* 5. Tampilkan konten di dalam kursor secara kondisional */}
+      {cursorVariant === 'developerImage' && (
+        <img
+          // GANTI DENGAN PATH GAMBAR ANDA
+          src="devteam.jpg" // Contoh: taruh gambar di folder /public
+          alt="Developer Team"
+          className="h-full w-full object-cover"
         />
-    );
+          )}
+          {cursorVariant === 'sanadImage' && (
+        <img
+          // GANTI DENGAN PATH GAMBAR ANDA
+          src="sanad.jpg" // Contoh: taruh gambar di folder /public
+          alt="sanad"
+          className="h-full w-full object-cover"
+        />
+          )}
+          {cursorVariant === 'arqImage' && (
+        <img
+          // GANTI DENGAN PATH GAMBAR ANDA
+          src="arq.jpg" // Contoh: taruh gambar di folder /public
+          alt="arq Team"
+          className="h-full w-full object-cover"
+        />
+          )}
+          {cursorVariant === 'sisusImage' && (
+        <img
+          // GANTI DENGAN PATH GAMBAR ANDA
+          src="sisus.jpg" // Contoh: taruh gambar di folder /public
+          alt="sisus moment"
+          className="h-full w-full object-cover"
+        />
+      )}
+          
+    </div>
+  );
 };
 
 export default CursorFollower;

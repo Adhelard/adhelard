@@ -25,7 +25,7 @@ const CTA = () => (
         </h2>
         <div className="flex space-x-5 justify-start">
           <motion.img
-            src="foto.jpg" // Ganti dengan fotomu
+            src="ex.jpg" // Ganti dengan fotomu
             alt="About Illustration"
             className="w-[200px] h-[200px] object-cover rounded-2xl filter grayscale hover:grayscale-0 transition-all duration-700 ease-in-out hover:scale-105 shadow-xl"
             whileHover={{ scale: 1.05 }}

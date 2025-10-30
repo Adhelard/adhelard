@@ -73,6 +73,7 @@
     --radius-xl: 0.75rem;
     --radius-2xl: 1rem;
     --radius-4xl: 2rem;
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     --blur-sm: 8px;
@@ -604,6 +605,9 @@
     border-left-style: var(--tw-border-style);
     border-left-width: 2px;
   }
+  .border-neutral-500 {
+    border-color: var(--color-neutral-500);
+  }
   .border-neutral-700 {
     border-color: var(--color-neutral-700);
   }
@@ -799,6 +803,9 @@
   .text-center {
     text-align: center;
   }
+  .text-end {
+    text-align: end;
+  }
   .font-mono {
     font-family: var(--font-mono);
   }
@@ -971,6 +978,10 @@
   .ease-in-out {
     --tw-ease: var(--ease-in-out);
     transition-timing-function: var(--ease-in-out);
+  }
+  .ease-out {
+    --tw-ease: var(--ease-out);
+    transition-timing-function: var(--ease-out);
   }
   .group-hover\:block {
     &:is(:where(.group):hover *) {
