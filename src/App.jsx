@@ -10,7 +10,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 
 // 1. Impor Provider baru Anda
-import { CursorProvider } from './context/CursorContext'; 
+import { CursorProvider } from './components/CursorContext'; 
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
