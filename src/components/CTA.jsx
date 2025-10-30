@@ -23,7 +23,7 @@ const CTA = () => (
         <h2 class="mb-8 text-center text-4xl font-bold md:text-7xl">
           Let's work together
         </h2>
-        <div className="flex space-x-5 justify-start">
+        <div className="flex flex-col md:flex-row space-x-5 justify-start">
           <motion.img
             src="ex.jpg" // Ganti dengan fotomu
             alt="About Illustration"
