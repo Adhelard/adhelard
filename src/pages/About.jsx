@@ -109,7 +109,7 @@ const About = () => {
             <motion.img
               src="keren.jpg" // Ganti dengan fotomu
               alt="Muhammad Arifin Ali"
-              className="w-[300px] h-[450px] object-cover rounded-2xl filter grayscale hover:grayscale-0 transition-all duration-700 ease-in-out hover:scale-105 shadow-xl"
+              className=" h-[600px] object-cover rounded-2xl filter grayscale hover:grayscale-0 transition-all duration-700 ease-in-out hover:scale-105 shadow-xl"
               whileHover={{ scale: 1.05 }}
             />
           </motion.div>

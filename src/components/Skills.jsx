@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 // Daftar skill dari CV Anda
 const skillsRow1 = [
-  'Flutter', 'Tailwind', 'HTML', 'CSS', 'PHP', 'SQL',
+  'Flutter', 'Tailwind', 'HTML', 'CSS', 'PHP', 'Python', 'Langchain', 'FastAPI'
 ];
 const skillsRow2 = [
   'Firebase', 'JS', 'Arduino', 'Machine Learning', 'Graphic Design', 'Video Editing'

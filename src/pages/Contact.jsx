@@ -79,18 +79,18 @@ const Contact = () => {
             initial="hidden"
             animate="visible"
             transition={{ delay: 0.4 }}
-            className="flex flex-col gap-4 text-lg"
+            className="flex flex-col gap-4 p-2 text-lg"
           >
             <a href="mailto:Blackarifin15@gmail.com" className="flex items-center gap-4 group w-fit">
-              <Mail className="h-6 w-6 text-black" />
+              <Mail className="h-6 w-6 " />
               <span className="text-neutral-200 group-hover:text-white transition-colors">Blackarifin15@gmail.com</span>
             </a>
             <div className="flex items-center gap-4">
-              <Phone className="h-6 w-6 text-black" />
+              <Phone className="h-6 w-6 " />
               <span className="text-neutral-200">0895 3830 51277</span>
             </div>
             <div className="flex items-center gap-4">
-              <MapPin className="h-6 w-6 text-black" />
+              <MapPin className="h-6 w-6 " />
               <span className="text-neutral-200">Cakung, East Jakarta</span>
             </div>
             <div className="flex gap-5">
