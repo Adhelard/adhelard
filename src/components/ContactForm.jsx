@@ -1,15 +1,12 @@
-// fileName: ContactForm.jsx (REVISI)
-
-import { useState } from 'react';
+// fileName: ContactForm.jsx
 
 const ContactForm = ({ onSubmit, loading, success, form, setForm }) => {
- // Fungsi onChange yang disederhanakan
- const handleChange = (e) => {
-  const { name, value } = e.target;
-  setForm({ ...form, [name]: value });
- };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+  };
 
- const inputStyle = `
+  const inputStyle = `
         w-full 
         p-4 
         text-xl 
@@ -25,40 +22,47 @@ const ContactForm = ({ onSubmit, loading, success, form, setForm }) => {
     `;
 
   return (
-   <div className="">
-  
-  <form className="space-y-12" onSubmit={onSubmit}>
-    <input
-     type="text"
-     placeholder="Your Name"
-     name="name"
-     value={form.name}
-     onChange={handleChange}
-     required
-     className={inputStyle}
-    />
-    <input
-     type="email"
-     placeholder="Your Email"
-     name="email"
-     value={form.email}
-     onChange={handleChange}
-     required
-     className={inputStyle}
-    />
-    <textarea
-     placeholder="Your Message"
-     name="message"
-     value={form.message}
-     onChange={handleChange}
-     required
-     className={`${inputStyle} h-32 resize-none`}
-    />
-    {/* Tombol Submit dihapus dari sini */}
-  </form>
-  {success && <p className="mt-6 text-green-400">Thank you! Your message has been "sent" (dummy mode).</p>}
- </div>
- );
+    <div>
+      {/* Tambahkan id="contact-form" di sini */}
+      <form id="contact-form" className="space-y-12" onSubmit={onSubmit}>
+        <input
+          type="text"
+          placeholder="Your Name"
+          name="name"
+          value={form.name}
+          onChange={handleChange}
+          required
+          disabled={loading}
+          className={inputStyle}
+        />
+        <input
+          type="email"
+          placeholder="Your Email"
+          name="email"
+          value={form.email}
+          onChange={handleChange}
+          required
+          disabled={loading}
+          className={inputStyle}
+        />
+        <textarea
+          placeholder="Your Message"
+          name="message"
+          value={form.message}
+          onChange={handleChange}
+          required
+          disabled={loading}
+          className={`${inputStyle} h-32 resize-none`}
+        />
+      </form>
+
+      {success && (
+        <p className="mt-6 text-green-400">
+          Thank you! Your message has been sent successfully.
+        </p>
+      )}
+    </div>
+  );
 };
 
 export default ContactForm;
