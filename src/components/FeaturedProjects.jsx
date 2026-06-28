@@ -10,7 +10,7 @@ const projects = [
     desc: "Chatbot yang memanfaatkan AI untuk memberikan jawaban terkait pertanyaan Islami. bertanggung jawab atas sumber yang di gunakan dan memastikan jawaban yang diberikan akurat.",
     img: "image.png",
     repo: "https://github.com/Adhelard/Islamic-AI.git",
-    demo: "ai-islami.com",
+    demo: "https://ai-islami.com",
   },{
     id: "RG account",
     name: "RG account",
@@ -25,7 +25,7 @@ const projects = [
     desc: "Membangun aplikasi filantropi untuk Palestina, berkolaborasi dengan UMKM di Yogyakarta.",
     img: "jlp.png",
     repo: "https://github.com/mukhsamr/si-jlp.git",
-    demo: "https://jogjalovepalestine.com",
+    demo: "https://www.google.com/search?q=jogja+love+palestine",
   },
   {
     id: "smart-islamic-clock",
@@ -41,7 +41,7 @@ const projects = [
     desc: "Mengembangkan media sosial internal yang terfokus untuk lingkungan Sekolah Impian.",
     img: "psi.png",
     repo: "https://github.com/khwarizmi-si/portalsi.git",
-    demo: "portalsi.com",
+    demo: "https://portalsi.com",
   },
 ];
 
