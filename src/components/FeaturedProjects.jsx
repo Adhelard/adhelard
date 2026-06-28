@@ -5,11 +5,18 @@ import { Github, Link as LinkIcon, Eye } from "lucide-react"; // 2. Impor ikon E
 const projects = [
   // ... data proyek Anda (tidak berubah)
   {
+    id: "AI Islami",
+    name: "AI-Islami",
+    desc: "Chatbot yang memanfaatkan AI untuk memberikan jawaban terkait pertanyaan Islami. bertanggung jawab atas sumber yang di gunakan dan memastikan jawaban yang diberikan akurat.",
+    img: "image.png",
+    repo: "https://github.com/Adhelard/Islamic-AI.git",
+    demo: "ai-islami.com",
+  },{
     id: "RG account",
     name: "RG account",
     desc: "Mengembangkan layanan akun untuk ekosistem mandiri sekolah impian.",
     img: "Akun.png",
-    repo: "#",
+    repo: "https://github.com/nothamzah09/layanan-akun.git",
     demo: "#",
   },
   {
@@ -17,24 +24,24 @@ const projects = [
     name: "Jogja Love Palestine",
     desc: "Membangun aplikasi filantropi untuk Palestina, berkolaborasi dengan UMKM di Yogyakarta.",
     img: "jlp.png",
-    repo: "#",
-    demo: "#",
+    repo: "https://github.com/mukhsamr/si-jlp.git",
+    demo: "https://jogjalovepalestine.com",
   },
   {
     id: "smart-islamic-clock",
     name: "Smart Islamic Clock",
     desc: "Merancang jam pintar berbasis IoT dengan fitur alarm ibadah, puzzle edukatif, dan fitur keluarga lainnya.",
     img: "IMG_4051.JPG",
-    repo: "#",
-    demo: "#",
+    repo: "https://github.com/Adhelard/Smart-clock.git",
+    demo: "https://github.com/Adhelard/Smart-clock.git",
   },
   {
     id: "portal-sekolah-impian",
     name: "Portal Sekolah Impian",
     desc: "Mengembangkan media sosial internal yang terfokus untuk lingkungan Sekolah Impian.",
     img: "psi.png",
-    repo: "#",
-    demo: "#",
+    repo: "https://github.com/khwarizmi-si/portalsi.git",
+    demo: "portalsi.com",
   },
 ];
 

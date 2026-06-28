@@ -1,24 +1,28 @@
 // src/context/CursorContext.jsx
 
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 
-// 1. Buat Context
 const CursorContext = createContext();
 
-// 2. Buat Provider (Komponen yang "menyimpan" state)
 export const CursorProvider = ({ children }) => {
   const [cursorVariant, setCursorVariant] = useState('default');
+  const [isDesktop, setIsDesktop] = useState(false); // <-- Tambahan state ini
 
-  const value = { cursorVariant, setCursorVariant };
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(min-width: 768px)');
+    setIsDesktop(mediaQuery.matches);
 
+    const handleResize = (e) => setIsDesktop(e.matches);
+    mediaQuery.addEventListener('change', handleResize);
+    return () => mediaQuery.removeEventListener('change', handleResize);
+  }, []);
+
+  // Expose isDesktop ke dalam value
   return (
-    <CursorContext.Provider value={value}>
+    <CursorContext.Provider value={{ cursorVariant, setCursorVariant, isDesktop }}>
       {children}
     </CursorContext.Provider>
   );
 };
 
-// 3. Buat hook kustom agar mudah digunakan
-export const useCursor = () => {
-  return useContext(CursorContext);
-};
+export const useCursor = () => useContext(CursorContext);

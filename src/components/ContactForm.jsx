@@ -56,11 +56,6 @@ const ContactForm = ({ onSubmit, loading, success, form, setForm }) => {
         />
       </form>
 
-      {success && (
-        <p className="mt-6 text-green-400">
-          Thank you! Your message has been sent successfully.
-        </p>
-      )}
     </div>
   );
 };

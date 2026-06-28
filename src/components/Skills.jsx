@@ -5,10 +5,10 @@ import { motion } from 'framer-motion';
 
 // Daftar skill dari CV Anda
 const skillsRow1 = [
-  'Flutter', 'Tailwind', 'HTML', 'CSS', 'PHP', 'Python', 'Langchain', 'FastAPI'
+  'Flutter', 'Tailwind', 'HTML', 'CSS', 'PHP', 'Python', 'Langchain', 'FastAPI', 'Next.js', 'React', 'Node.js', 'MySQL', 'PostgreSQL'
 ];
 const skillsRow2 = [
-  'Firebase', 'JS', 'Arduino', 'Machine Learning', 'Graphic Design', 'Video Editing'
+  'Firebase', 'JS', 'Arduino/ESP', 'Machine Learning', 'Graphic Design', 'Video Editing', 'ai', 'IoT', 'Canva Designer', 'UI/UX Design', 'Git', 'GitHub'
 ];
 
 // Komponen untuk satu bubble

@@ -8,8 +8,10 @@ import { useCursor } from '../context/CursorContext';
 const CursorFollower = () => {
   const cursorRef = useRef(null);
   // 2. Dapatkan state kursor saat ini dari konteks
-  const { cursorVariant } = useCursor();
+  const { cursorVariant, isDesktop } = useCursor();
 
+  if (!isDesktop) return null;
+  
   useEffect(() => {
     const cursor = cursorRef.current;
     if (!cursor) return;
