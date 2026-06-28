@@ -2,17 +2,18 @@
 
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-// 1. Impor hook 'useCursor'
 import { useCursor } from '../context/CursorContext';
 
 const CursorFollower = () => {
   const cursorRef = useRef(null);
-  // 2. Dapatkan state kursor saat ini dari konteks
+  
+  // 1. Ambil state cursorVariant DAN isDesktop dari Context
   const { cursorVariant, isDesktop } = useCursor();
 
-  if (!isDesktop) return null;
-  
   useEffect(() => {
+    // Pengaman ganda: Jika di HP/Mobile, jangan pernah jalankan GSAP
+    if (!isDesktop) return;
+
     const cursor = cursorRef.current;
     if (!cursor) return;
 
@@ -45,20 +46,19 @@ const CursorFollower = () => {
       window.removeEventListener('mousemove', handleMouseMove);
       cancelAnimationFrame(animationFrameId);
     };
-  }, []);
+  }, [isDesktop]); // <-- Masukkan isDesktop ke dependency array
 
-  // 3. Definisikan varian style
+  // 2. SAKLAR KUNCI: Jika di mobile, kembalikan 'null' (Jangan render kode HTML di bawah ke layar)
+  if (!isDesktop) return null;
+
   const baseStyle = "fixed pointer-events-none z-50 transition-all duration-300 ease-out";
   
   const variants = {
     default: "h-24 w-24 rounded-full border-2 border-white backdrop-blur-sm",
-      developerImage: "h-64 w-82 rounded-lg border-2 border-neutral-500 overflow-hidden shadow-lg",
-      sisusImage: "h-64 w-82 rounded-lg border-2 border-neutral-500 overflow-hidden shadow-lg",
-      sanadImage: "h-64 w-82 rounded-lg border-2 border-neutral-500 overflow-hidden shadow-lg",
-      arqImage: "h-64 w-82 rounded-lg border-2 border-neutral-500 overflow-hidden shadow-lg",
-      
-    
-    // Anda bisa tambahkan varian lain di sini, misal: 'link', 'text', 'imageHover'
+    developerImage: "h-64 w-82 rounded-lg border-2 border-neutral-500 overflow-hidden shadow-lg",
+    sisusImage: "h-64 w-82 rounded-lg border-2 border-neutral-500 overflow-hidden shadow-lg",
+    sanadImage: "h-64 w-82 rounded-lg border-2 border-neutral-500 overflow-hidden shadow-lg",
+    arqImage: "h-64 w-82 rounded-lg border-2 border-neutral-500 overflow-hidden shadow-lg",
   };
 
   const currentStyle = variants[cursorVariant] || variants.default;
@@ -66,43 +66,36 @@ const CursorFollower = () => {
   return (
     <div
       ref={cursorRef}
-      // 4. Terapkan style dinamis berdasarkan state
       className={`${baseStyle} ${currentStyle}`}
     >
-      {/* 5. Tampilkan konten di dalam kursor secara kondisional */}
       {cursorVariant === 'developerImage' && (
         <img
-          // GANTI DENGAN PATH GAMBAR ANDA
-          src="devteam.jpg" // Contoh: taruh gambar di folder /public
+          src="devteam.jpg" 
           alt="Developer Team"
           className="h-full w-full object-cover"
         />
-          )}
-          {cursorVariant === 'sanadImage' && (
+      )}
+      {cursorVariant === 'sanadImage' && (
         <img
-          // GANTI DENGAN PATH GAMBAR ANDA
-          src="sanad.jpg" // Contoh: taruh gambar di folder /public
+          src="sanad.jpg" 
           alt="sanad"
           className="h-full w-full object-cover"
         />
-          )}
-          {cursorVariant === 'arqImage' && (
+      )}
+      {cursorVariant === 'arqImage' && (
         <img
-          // GANTI DENGAN PATH GAMBAR ANDA
-          src="arq.jpg" // Contoh: taruh gambar di folder /public
+          src="arq.jpg" 
           alt="arq Team"
           className="h-full w-full object-cover"
         />
-          )}
-          {cursorVariant === 'sisusImage' && (
+      )}
+      {cursorVariant === 'sisusImage' && (
         <img
-          // GANTI DENGAN PATH GAMBAR ANDA
-          src="sisus.jpg" // Contoh: taruh gambar di folder /public
+          src="sisus.jpg" 
           alt="sisus moment"
           className="h-full w-full object-cover"
         />
       )}
-          
     </div>
   );
 };
