@@ -24,16 +24,23 @@ const fadeInFromBottom = {
 const experiences = [
   {
     icon: <Briefcase />,
+    role: 'Freelancer',
+    company: '-',
+    date: 'June 2026 - present', //
+    variant: 'default', // Varian kursor standar
+  },
+  {
+    icon: <Briefcase />,
     role: 'Internship',
     company: 'PT Al Khawarizmi',
-    date: 'August 2025 - Present', //
+    date: 'August 2025 - July 2026', //
     variant: 'default', // Varian kursor standar
   },
   {
     icon: <Briefcase />,
     role: 'Developer Team Member',
     company: 'Official Developer Team Sekolah Impian',
-    date: '2024 - Present', //
+    date: '2024 - July 2026', //
     variant: 'developerImage', // Varian kursor kustom
   },
 ];
@@ -88,9 +95,9 @@ const About = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
-            <h1 className="mb-6 text-5xl font-bold">About Me</h1>
+            <h1 className="mb-6 text-7xl font-bold">About Me</h1>
             <p className="mb-6 max-w-2xl text-xl text-neutral-300">
-              I am Muhammad Arifin Ali, a passionate Web & App Developer and a dedicated student focused on creating impactful technological solutions. With strong foundational skills in Front-End (Flutter, Tailwind, HTML, CSS) and Back-End (PHP, SQL, Firebase, JS) development, I strive to build applications that not only solve problems but also inspire growth and positive change within communities, such as my work on QCB A.I. and Portal Sekolah Impian.
+              I am Muhammad Arifin Ali, a passionate Web & App Developer and a dedicated student focused on creating impactful technological solutions. With strong foundational skills in Front-End (Flutter, next.js, svelte, etc) and Back-End (Laravel, Firebase, JS) development, I strive to build applications that not only solve problems but also inspire growth and positive change within communities, such as my work on QCB A.I. and Portal Sekolah Impian.
             </p>
             <p className="max-w-2xl text-lg text-neutral-400">
               I combine technical expertise with leadership qualities, aiming to be a future developer and leader who drives real impact.
@@ -109,7 +116,7 @@ const About = () => {
             <motion.img
               src="keren.jpg" // Ganti dengan fotomu
               alt="Muhammad Arifin Ali"
-              className=" h-[600px] object-cover rounded-2xl filter grayscale hover:grayscale-0 transition-all duration-700 ease-in-out hover:scale-105 shadow-xl"
+              className="h-[400px] md:h-[600px] object-cover rounded-2xl filter grayscale hover:grayscale-0 transition-all duration-700 ease-in-out hover:scale-105 shadow-xl"
               whileHover={{ scale: 1.05 }}
             />
           </motion.div>

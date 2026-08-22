@@ -43,6 +43,14 @@ const projects = [
     repo: "https://github.com/khwarizmi-si/portalsi.git",
     demo: "https://portalsi.com",
   },
+  {
+    id: "Character Integrated assestment",
+    name: "Character Integrated Assessment",
+    desc: "Membangun sistem penilaian karakter berbasis web & AI untuk Sekolah Impian.",
+    img: "cia.png",
+    repo: "https://github.com/khwarizmi-si/CIA.git", 
+    demo: "#",
+  }
 ];
 
 // Definisikan transisi "spring" yang lebih baik

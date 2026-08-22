@@ -1,17 +1,18 @@
 import { motion } from 'framer-motion';
 
 const Hero = () => (
-  <section className="relative flex h-screen flex-col items-center justify-center overflow-hidden bg-neutral-900 text-white">
+  <section className="relative flex h-screen flex-col items-start justify-center overflow-hidden bg-neutral-900 text-white">
     {/* Latar belakang gradien pudar */}
     <div className="absolute inset-0 z-0 bg-linear-to-b from-neutral-900 via-neutral-900 to-black"></div>
     
-    <div className="relative z-10 flex flex-col items-center">
+    <div className="relative z-10 flex flex-col ">
       {/* 1. Gambar Anda (Gunakan placeholder) */}
-      <motion.img
+      <div className="flex flex-col md:flex-row justify-center gap-2 items-center">
+        <motion.img
         // Ganti dengan URL foto Anda
         src="boros.png" 
         alt="Foto Muhammad Arifin Ali"
-        className="mb-6 h-32 w-32 rounded-full border-4 border-neutral-700 object-cover shadow-lg"
+        className=" h-32 w-32 rounded-full border-4 border-neutral-700 object-cover shadow-lg"
         initial={{ clipPath: 'circle(0% at 50% 50%)' }} // Muncul dari tengah
         animate={{ clipPath: 'circle(75% at 50% 50%)' }}
         transition={{ duration: 1, delay: 0.2, ease: 'circOut' }}
@@ -31,10 +32,12 @@ const Hero = () => (
       >
         Muhammad Arifin Ali
       </motion.h1>
+      </div>
+      
 
       {/* 3. Status/Jabatan dengan Animasi Staggered */}
       <motion.div
-        className="mt-6 flex flex-col items-center gap-2 text-lg text-neutral-300 sm:flex-row sm:gap-4"
+        className="mt-2 ml-2 flex flex-col items-center gap-2 text-lg text-neutral-300 sm:flex-row sm:gap-4"
         initial="hidden"
         animate="visible"
         variants={{
@@ -49,13 +52,13 @@ const Hero = () => (
         <motion.p
           variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
         >
-          Web & App Developer!
+          Tech Enthusiast
         </motion.p>
         <span className="hidden text-neutral-500 sm:block">|</span>
         <motion.p
           variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
         >
-          Intern at PT Al Khawarizmi
+          Experienced in WEB, APP, & AI Development
         </motion.p>
       </motion.div>
     </div>
