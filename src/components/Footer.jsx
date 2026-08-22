@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail } from 'lucide-react'; // Ganti dengan emoji jik
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-neutral-950 py-8 text-neutral-400">
+    <footer className="w-full bg-neutral-950 py-16 text-neutral-400">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between px-6 sm:flex-row">
         {/* Kiri: Teks Anda */}
         <p className="mb-4 sm:mb-0">
