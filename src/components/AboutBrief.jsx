@@ -38,7 +38,7 @@ const AboutBrief = () => (
       <motion.img
         src="foto.jpg" // Ganti dengan fotomu
         alt="About Illustration"
-        className="w-[400px] h-[400px] md:w-[400px] md:h-[600px] object-cover rounded-2xl filter grayscale hover:grayscale-0 transition-all duration-700 ease-in-out hover:scale-105 shadow-xl"
+        className="w-[400px] h-[400px] sm:w-[400px] sm:h-[600px] object-cover rounded-2xl filter grayscale hover:grayscale-0 transition-all duration-700 ease-in-out hover:scale-105 shadow-xl"
         whileHover={{ scale: 1.05 }}
       />
     </motion.div>

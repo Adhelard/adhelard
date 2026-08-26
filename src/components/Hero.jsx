@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion';
 
 const Hero = () => (
-  <section className="relative flex h-screen flex-col items-start justify-center overflow-hidden bg-neutral-900 text-white">
+  <section className="relative flex h-screen flex-col items-center justify-center overflow-hidden bg-neutral-900 text-white">
     {/* Latar belakang gradien pudar */}
     <div className="absolute inset-0 z-0 bg-linear-to-b from-neutral-900 via-neutral-900 to-black"></div>
     
     <div className="relative z-10 flex flex-col ">
       {/* 1. Gambar Anda (Gunakan placeholder) */}
-      <div className="flex flex-col md:flex-row justify-center gap-2 items-center">
+      <div className="flex flex-col  md:flex-row justify-center gap-2 items-center">
         <motion.img
         // Ganti dengan URL foto Anda
         src="boros.png" 
